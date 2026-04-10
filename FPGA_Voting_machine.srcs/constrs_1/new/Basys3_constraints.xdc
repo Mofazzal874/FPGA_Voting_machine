@@ -1,4 +1,4 @@
-## Basys 3 Constraints File for FPGA Voting Machine
+## Basys 3 Constraints File for FPGA Voting Machine (Phase 3)
 ## Board: Digilent Basys 3 (XC7A35T-1CPG236C)
 
 ## Clock signal (100 MHz)
@@ -6,32 +6,77 @@ set_property PACKAGE_PIN W5 [get_ports clock]
 set_property IOSTANDARD LVCMOS33 [get_ports clock]
 create_clock -add -name sys_clk_pin -period 10.00 -waveform {0 5} [get_ports clock]
 
-## Reset - Center push button (BTNC)
-set_property PACKAGE_PIN U18 [get_ports reset]
-set_property IOSTANDARD LVCMOS33 [get_ports reset]
+## Push Buttons
+# BTNC — Submit / Confirm
+set_property PACKAGE_PIN U18 [get_ports btnc]
+set_property IOSTANDARD LVCMOS33 [get_ports btnc]
 
-## Mode switch - SW0
-set_property PACKAGE_PIN V17 [get_ports mode]
-set_property IOSTANDARD LVCMOS33 [get_ports mode]
-
-## Voting Buttons
-# Button 1 (Candidate 1) - BTNU (Up)
+# BTNU — Candidate 1 vote / View Cand 1 results
 set_property PACKAGE_PIN T18 [get_ports button1]
 set_property IOSTANDARD LVCMOS33 [get_ports button1]
 
-# Button 2 (Candidate 2) - BTNL (Left)
+# BTNL — Candidate 2 vote / View Cand 2 results
 set_property PACKAGE_PIN W19 [get_ports button2]
 set_property IOSTANDARD LVCMOS33 [get_ports button2]
 
-# Button 3 (Candidate 3) - BTNR (Right)
+# BTNR — Candidate 3 vote / View Cand 3 results
 set_property PACKAGE_PIN T17 [get_ports button3]
 set_property IOSTANDARD LVCMOS33 [get_ports button3]
 
-# Button 4 (Candidate 4) - BTND (Down)
+# BTND — Candidate 4 vote / View Cand 4 results
 set_property PACKAGE_PIN U17 [get_ports button4]
 set_property IOSTANDARD LVCMOS33 [get_ports button4]
 
-## LEDs
+## Slide Switches (SW0–SW15) — NID / Admin password entry
+set_property PACKAGE_PIN V17 [get_ports {switches[0]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {switches[0]}]
+
+set_property PACKAGE_PIN V16 [get_ports {switches[1]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {switches[1]}]
+
+set_property PACKAGE_PIN W16 [get_ports {switches[2]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {switches[2]}]
+
+set_property PACKAGE_PIN W17 [get_ports {switches[3]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {switches[3]}]
+
+set_property PACKAGE_PIN W15 [get_ports {switches[4]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {switches[4]}]
+
+set_property PACKAGE_PIN V15 [get_ports {switches[5]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {switches[5]}]
+
+set_property PACKAGE_PIN W14 [get_ports {switches[6]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {switches[6]}]
+
+set_property PACKAGE_PIN W13 [get_ports {switches[7]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {switches[7]}]
+
+set_property PACKAGE_PIN V2 [get_ports {switches[8]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {switches[8]}]
+
+set_property PACKAGE_PIN T3 [get_ports {switches[9]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {switches[9]}]
+
+set_property PACKAGE_PIN T2 [get_ports {switches[10]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {switches[10]}]
+
+set_property PACKAGE_PIN R3 [get_ports {switches[11]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {switches[11]}]
+
+set_property PACKAGE_PIN W2 [get_ports {switches[12]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {switches[12]}]
+
+set_property PACKAGE_PIN U1 [get_ports {switches[13]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {switches[13]}]
+
+set_property PACKAGE_PIN T1 [get_ports {switches[14]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {switches[14]}]
+
+set_property PACKAGE_PIN R2 [get_ports {switches[15]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {switches[15]}]
+
+## LEDs (LED0–LED15)
 set_property PACKAGE_PIN U16 [get_ports {led[0]}]
 set_property IOSTANDARD LVCMOS33 [get_ports {led[0]}]
 
@@ -56,7 +101,31 @@ set_property IOSTANDARD LVCMOS33 [get_ports {led[6]}]
 set_property PACKAGE_PIN V14 [get_ports {led[7]}]
 set_property IOSTANDARD LVCMOS33 [get_ports {led[7]}]
 
-## 7-Segment Display - Cathodes (active-low, accent shared)
+set_property PACKAGE_PIN V13 [get_ports {led[8]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {led[8]}]
+
+set_property PACKAGE_PIN V3 [get_ports {led[9]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {led[9]}]
+
+set_property PACKAGE_PIN W3 [get_ports {led[10]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {led[10]}]
+
+set_property PACKAGE_PIN U3 [get_ports {led[11]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {led[11]}]
+
+set_property PACKAGE_PIN P3 [get_ports {led[12]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {led[12]}]
+
+set_property PACKAGE_PIN N3 [get_ports {led[13]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {led[13]}]
+
+set_property PACKAGE_PIN P1 [get_ports {led[14]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {led[14]}]
+
+set_property PACKAGE_PIN L1 [get_ports {led[15]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {led[15]}]
+
+## 7-Segment Display — Cathodes (active-low)
 # seg[0] = CA (segment a)
 set_property PACKAGE_PIN W7 [get_ports {seg[0]}]
 set_property IOSTANDARD LVCMOS33 [get_ports {seg[0]}]
@@ -89,20 +158,16 @@ set_property IOSTANDARD LVCMOS33 [get_ports {seg[6]}]
 set_property PACKAGE_PIN V7 [get_ports dp]
 set_property IOSTANDARD LVCMOS33 [get_ports dp]
 
-## 7-Segment Display - Anodes (active-low, one per digit)
-# AN0 = rightmost digit (Candidate 4)
+## 7-Segment Display — Anodes (active-low)
 set_property PACKAGE_PIN U2 [get_ports {an[0]}]
 set_property IOSTANDARD LVCMOS33 [get_ports {an[0]}]
 
-# AN1 (Candidate 3)
 set_property PACKAGE_PIN U4 [get_ports {an[1]}]
 set_property IOSTANDARD LVCMOS33 [get_ports {an[1]}]
 
-# AN2 (Candidate 2)
 set_property PACKAGE_PIN V4 [get_ports {an[2]}]
 set_property IOSTANDARD LVCMOS33 [get_ports {an[2]}]
 
-# AN3 = leftmost digit (Candidate 1)
 set_property PACKAGE_PIN W4 [get_ports {an[3]}]
 set_property IOSTANDARD LVCMOS33 [get_ports {an[3]}]
 

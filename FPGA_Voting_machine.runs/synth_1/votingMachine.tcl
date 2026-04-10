@@ -87,9 +87,12 @@ OPTRACE "Adding files" START { }
 read_verilog -library xil_defaultlib {
   D:/Academics/DSD/FPGA_Voting_machine/FPGA_Voting_machine.srcs/sources_1/new/ALU.v
   D:/Academics/DSD/FPGA_Voting_machine/FPGA_Voting_machine.srcs/sources_1/new/buttonControl.v
+  D:/Academics/DSD/FPGA_Voting_machine/FPGA_Voting_machine.srcs/sources_1/new/comparator.v
+  D:/Academics/DSD/FPGA_Voting_machine/FPGA_Voting_machine.srcs/sources_1/new/controlUnit.v
+  D:/Academics/DSD/FPGA_Voting_machine/FPGA_Voting_machine.srcs/sources_1/new/fetchExecuteUnit.v
   D:/Academics/DSD/FPGA_Voting_machine/FPGA_Voting_machine.srcs/sources_1/new/memoryUnit.v
   D:/Academics/DSD/FPGA_Voting_machine/FPGA_Voting_machine.srcs/sources_1/new/sevenSegDisplay.v
-  D:/Academics/DSD/FPGA_Voting_machine/FPGA_Voting_machine.srcs/sources_1/new/voteLogger.v
+  D:/Academics/DSD/FPGA_Voting_machine/FPGA_Voting_machine.srcs/sources_1/new/votingTimer.v
   D:/Academics/DSD/FPGA_Voting_machine/FPGA_Voting_machine.srcs/sources_1/new/votingMachine.v
 }
 OPTRACE "Adding files" END { }

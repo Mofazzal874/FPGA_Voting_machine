@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2023.1 (win64) Build 3865809 Sun May  7 15:05:29 MDT 2023
-| Date             : Wed Apr  1 11:59:52 2026
+| Date             : Fri Apr 10 15:00:24 2026
 | Host             : Mofazzal874 running 64-bit major release  (build 9200)
 | Command          : report_power -file votingMachine_power_routed.rpt -pb votingMachine_power_summary_routed.pb -rpx votingMachine_power_routed.rpx
 | Design           : votingMachine
@@ -30,14 +30,14 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 0.090        |
+| Total On-Chip Power (W)  | 0.095        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.018        |
+| Dynamic (W)              | 0.024        |
 | Device Static (W)        | 0.072        |
 | Effective TJA (C/W)      | 5.0          |
-| Max Ambient (C)          | 84.6         |
-| Junction Temperature (C) | 25.4         |
+| Max Ambient (C)          | 84.5         |
+| Junction Temperature (C) | 25.5         |
 | Confidence Level         | Low          |
 | Setting File             | ---          |
 | Simulation Activity File | ---          |
@@ -52,16 +52,18 @@ Table of Contents
 +----------------+-----------+----------+-----------+-----------------+
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
-| Clocks         |     0.001 |        3 |       --- |             --- |
-| Slice Logic    |    <0.001 |      341 |       --- |             --- |
-|   LUT as Logic |    <0.001 |       98 |     20800 |            0.47 |
-|   CARRY4       |    <0.001 |       33 |      8150 |            0.40 |
-|   Register     |    <0.001 |      172 |     41600 |            0.41 |
-|   Others       |     0.000 |       11 |       --- |             --- |
-| Signals        |    <0.001 |      284 |       --- |             --- |
-| I/O            |     0.016 |       27 |       106 |           25.47 |
+| Clocks         |     0.002 |        3 |       --- |             --- |
+| Slice Logic    |    <0.001 |     1023 |       --- |             --- |
+|   LUT as Logic |    <0.001 |      470 |     20800 |            2.26 |
+|   CARRY4       |    <0.001 |       68 |      8150 |            0.83 |
+|   Register     |    <0.001 |      387 |     41600 |            0.93 |
+|   F7/F8 Muxes  |    <0.001 |        1 |     32600 |           <0.01 |
+|   Others       |     0.000 |       25 |       --- |             --- |
+| Signals        |     0.001 |      926 |       --- |             --- |
+| Block RAM      |     0.001 |      0.5 |        50 |            1.00 |
+| I/O            |     0.018 |       50 |       106 |           47.17 |
 | Static Power   |     0.072 |          |           |                 |
-| Total          |     0.090 |          |           |                 |
+| Total          |     0.095 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 
@@ -71,9 +73,9 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) | Powerup (A) | Budget (A)  | Margin (A) |
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
-| Vccint    |       1.000 |     0.012 |       0.002 |      0.010 |       NA    | Unspecified | NA         |
+| Vccint    |       1.000 |     0.015 |       0.006 |      0.010 |       NA    | Unspecified | NA         |
 | Vccaux    |       1.800 |     0.013 |       0.001 |      0.013 |       NA    | Unspecified | NA         |
-| Vcco33    |       3.300 |     0.005 |       0.004 |      0.001 |       NA    | Unspecified | NA         |
+| Vcco33    |       3.300 |     0.006 |       0.005 |      0.001 |       NA    | Unspecified | NA         |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vcco18    |       1.800 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vcco15    |       1.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
@@ -140,7 +142,9 @@ Table of Contents
 +---------------+-----------+
 | Name          | Power (W) |
 +---------------+-----------+
-| votingMachine |     0.018 |
+| votingMachine |     0.024 |
+|   CU          |     0.001 |
+|   MEM         |     0.001 |
 +---------------+-----------+
 
 

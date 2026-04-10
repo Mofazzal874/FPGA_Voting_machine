@@ -1,0 +1,18 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  \
+"../../../../FPGA_Voting_machine.srcs/sources_1/new/ALU.v" \
+"../../../../FPGA_Voting_machine.srcs/sources_1/new/buttonControl.v" \
+"../../../../FPGA_Voting_machine.srcs/sources_1/new/comparator.v" \
+"../../../../FPGA_Voting_machine.srcs/sources_1/new/controlUnit.v" \
+"../../../../FPGA_Voting_machine.srcs/sources_1/new/fetchExecuteUnit.v" \
+"../../../../FPGA_Voting_machine.srcs/sources_1/new/memoryUnit.v" \
+"../../../../FPGA_Voting_machine.srcs/sources_1/new/sevenSegDisplay.v" \
+"../../../../FPGA_Voting_machine.srcs/sources_1/new/votingMachine.v" \
+"../../../../FPGA_Voting_machine.srcs/sources_1/new/votingTimer.v" \
+"../../../../FPGA_Voting_machine.srcs/sim_1/new/votingMachine_tb.v" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

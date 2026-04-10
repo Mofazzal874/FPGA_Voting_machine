@@ -1,0 +1,4 @@
+Running: xsim.dir/votingMachine_tb_behav/xsimk.exe -simmode gui -wdb votingMachine_tb_behav.wdb -simrunnum 0 -socket 57366
+Design successfully loaded
+Design Loading Memory Usage: 10688 KB (Peak: 10688 KB)
+Design Loading CPU Usage: 93 ms

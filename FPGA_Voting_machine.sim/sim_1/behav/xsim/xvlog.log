@@ -1,0 +1,22 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Academics/DSD/FPGA_Voting_machine/FPGA_Voting_machine.srcs/sources_1/new/ALU.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ALU
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Academics/DSD/FPGA_Voting_machine/FPGA_Voting_machine.srcs/sources_1/new/buttonControl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module buttonControl
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Academics/DSD/FPGA_Voting_machine/FPGA_Voting_machine.srcs/sources_1/new/comparator.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module comparator
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Academics/DSD/FPGA_Voting_machine/FPGA_Voting_machine.srcs/sources_1/new/controlUnit.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module controlUnit
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Academics/DSD/FPGA_Voting_machine/FPGA_Voting_machine.srcs/sources_1/new/fetchExecuteUnit.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module fetchExecuteUnit
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Academics/DSD/FPGA_Voting_machine/FPGA_Voting_machine.srcs/sources_1/new/memoryUnit.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module memoryUnit
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Academics/DSD/FPGA_Voting_machine/FPGA_Voting_machine.srcs/sources_1/new/sevenSegDisplay.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module sevenSegDisplay
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Academics/DSD/FPGA_Voting_machine/FPGA_Voting_machine.srcs/sources_1/new/votingMachine.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module votingMachine
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Academics/DSD/FPGA_Voting_machine/FPGA_Voting_machine.srcs/sources_1/new/votingTimer.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module votingTimer
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Academics/DSD/FPGA_Voting_machine/FPGA_Voting_machine.srcs/sim_1/new/votingMachine_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module votingMachine_tb
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Academics/DSD/FPGA_Voting_machine/FPGA_Voting_machine.sim/sim_1/behav/xsim/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl

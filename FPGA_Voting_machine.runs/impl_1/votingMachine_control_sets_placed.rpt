@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2023.1 (win64) Build 3865809 Sun May  7 15:05:29 MDT 2023
-| Date         : Wed Apr  1 11:59:12 2026
+| Date         : Fri Apr 10 14:59:33 2026
 | Host         : Mofazzal874 running 64-bit major release  (build 9200)
 | Command      : report_control_sets -verbose -file votingMachine_control_sets_placed.rpt
 | Design       : votingMachine
@@ -23,11 +23,11 @@ Table of Contents
 +----------------------------------------------------------+-------+
 |                          Status                          | Count |
 +----------------------------------------------------------+-------+
-| Total control sets                                       |    10 |
-|    Minimum number of control sets                        |    10 |
+| Total control sets                                       |    25 |
+|    Minimum number of control sets                        |    25 |
 |    Addition due to synthesis replication                 |     0 |
 |    Addition due to physical synthesis replication        |     0 |
-| Unused register locations in slices containing registers |    28 |
+| Unused register locations in slices containing registers |   101 |
 +----------------------------------------------------------+-------+
 * Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
 ** Run report_qor_suggestions for automated merging and remapping suggestions
@@ -39,15 +39,15 @@ Table of Contents
 +--------------------+-------+
 |       Fanout       | Count |
 +--------------------+-------+
-| Total control sets |    10 |
-| >= 0 to < 4        |     0 |
-| >= 4 to < 6        |     1 |
-| >= 6 to < 8        |     0 |
-| >= 8 to < 10       |     4 |
+| Total control sets |    25 |
+| >= 0 to < 4        |     2 |
+| >= 4 to < 6        |     5 |
+| >= 6 to < 8        |     1 |
+| >= 8 to < 10       |     5 |
 | >= 10 to < 12      |     0 |
 | >= 12 to < 14      |     0 |
 | >= 14 to < 16      |     0 |
-| >= 16              |     5 |
+| >= 16              |    12 |
 +--------------------+-------+
 * Control sets can be remapped at either synth_design or opt_design
 
@@ -58,31 +58,46 @@ Table of Contents
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
-| No           | No                    | No                     |               0 |            0 |
+| No           | No                    | No                     |               1 |            1 |
 | No           | No                    | Yes                    |               0 |            0 |
-| No           | Yes                   | No                     |              32 |           12 |
-| Yes          | No                    | No                     |               0 |            0 |
+| No           | Yes                   | No                     |              32 |           14 |
+| Yes          | No                    | No                     |               4 |            1 |
 | Yes          | No                    | Yes                    |               0 |            0 |
-| Yes          | Yes                   | No                     |             140 |           40 |
+| Yes          | Yes                   | No                     |             350 |          132 |
 +--------------+-----------------------+------------------------+-----------------+--------------+
 
 
 4. Detailed Control Set Information
 -----------------------------------
 
-+------------------+---------------------------+---------------------------+------------------+----------------+--------------+
-|   Clock Signal   |       Enable Signal       |      Set/Reset Signal     | Slice Load Count | Bel Load Count | Bels / Slice |
-+------------------+---------------------------+---------------------------+------------------+----------------+--------------+
-|  clock_IBUF_BUFG |                           | led[7]_i_1_n_0            |                1 |              4 |         4.00 |
-|  clock_IBUF_BUFG | bc1/E[0]                  | reset_IBUF                |                4 |              8 |         2.00 |
-|  clock_IBUF_BUFG | bc2/valid_vote_reg_0[0]   | reset_IBUF                |                3 |              8 |         2.67 |
-|  clock_IBUF_BUFG | bc3/valid_vote_reg_0[0]   | reset_IBUF                |                2 |              8 |         4.00 |
-|  clock_IBUF_BUFG | bc4/valid_vote_reg_0[0]   | reset_IBUF                |                3 |              8 |         2.67 |
-|  clock_IBUF_BUFG | bc1/counter[0]_i_2_n_0    | bc1/counter[0]_i_1_n_0    |                7 |             27 |         3.86 |
-|  clock_IBUF_BUFG | bc2/counter[0]_i_2__0_n_0 | bc2/counter[0]_i_1__0_n_0 |                7 |             27 |         3.86 |
-|  clock_IBUF_BUFG | bc3/counter[0]_i_2__1_n_0 | bc3/counter[0]_i_1__1_n_0 |                7 |             27 |         3.86 |
-|  clock_IBUF_BUFG | bc4/counter[0]_i_2__2_n_0 | bc4/counter[0]_i_1__2_n_0 |                7 |             27 |         3.86 |
-|  clock_IBUF_BUFG |                           | reset_IBUF                |               11 |             28 |         2.55 |
-+------------------+---------------------------+---------------------------+------------------+----------------+--------------+
++------------------+-------------------------------------+----------------------------+------------------+----------------+--------------+
+|   Clock Signal   |            Enable Signal            |      Set/Reset Signal      | Slice Load Count | Bel Load Count | Bels / Slice |
++------------------+-------------------------------------+----------------------------+------------------+----------------+--------------+
+|  clock_IBUF_BUFG |                                     |                            |                1 |              1 |         1.00 |
+|  clock_IBUF_BUFG | btnc_stable                         | CU/system_reset            |                1 |              1 |         1.00 |
+|  clock_IBUF_BUFG | FEU/FSM_sequential_state[3]_i_1_n_0 | CU/system_reset            |                2 |              4 |         2.00 |
+|  clock_IBUF_BUFG | TIMER/mins_elapsed[3]_i_1_n_0       | CU/SR[0]                   |                1 |              4 |         4.00 |
+|  clock_IBUF_BUFG | CU/system_reset                     |                            |                1 |              4 |         4.00 |
+|  clock_IBUF_BUFG | CU/state[4]_i_1_n_0                 | CU/system_reset            |                2 |              5 |         2.50 |
+|  clock_IBUF_BUFG | CU/reset_counter_reg[8]_0           | CU/system_reset            |                2 |              5 |         2.50 |
+|  clock_IBUF_BUFG | TIMER/sec_in_min[5]_i_1_n_0         | CU/SR[0]                   |                2 |              6 |         3.00 |
+|  clock_IBUF_BUFG | FEU/fe_match_addr[8]_i_1_n_0        | CU/system_reset            |                5 |              9 |         1.80 |
+|  clock_IBUF_BUFG | FEU/mar                             | CU/system_reset            |                4 |              9 |         2.25 |
+|  clock_IBUF_BUFG | FEU/pc                              | CU/system_reset            |                7 |              9 |         1.29 |
+|  clock_IBUF_BUFG | CU/saved_match_addr[8]_i_1_n_0      | CU/system_reset            |                2 |              9 |         4.50 |
+|  clock_IBUF_BUFG | CU/reset_counter[8]_i_1_n_0         | CU/system_reset            |                3 |              9 |         3.00 |
+|  clock_IBUF_BUFG | CU/saved_switches[15]_i_1_n_0       | CU/system_reset            |               10 |             16 |         1.60 |
+|  clock_IBUF_BUFG | CU/result_value[15]_i_1_n_0         | CU/system_reset            |                9 |             16 |         1.78 |
+|  clock_IBUF_BUFG | sel                                 | btnc_db_counter[0]_i_1_n_0 |                6 |             21 |         3.50 |
+|  clock_IBUF_BUFG | TIMER/sec_counter[26]_i_2_n_0       | CU/SR[0]                   |               11 |             27 |         2.45 |
+|  clock_IBUF_BUFG | CU/counter_reg[26]                  | bc1/counter[0]_i_1__2_n_0  |                7 |             27 |         3.86 |
+|  clock_IBUF_BUFG | CU/counter_reg[26]_1                | bc3/counter[0]_i_1__0_n_0  |                7 |             27 |         3.86 |
+|  clock_IBUF_BUFG | CU/counter_reg[26]_0                | bc2/counter[0]_i_1__1_n_0  |                7 |             27 |         3.86 |
+|  clock_IBUF_BUFG | bc4/counter[0]_i_2__2_n_0           | bc4/counter[0]_i_1_n_0     |                7 |             27 |         3.86 |
+|  clock_IBUF_BUFG | CU/delay_counter[27]_i_1_n_0        | CU/system_reset            |               12 |             28 |         2.33 |
+|  clock_IBUF_BUFG |                                     | CU/system_reset            |               14 |             32 |         2.29 |
+|  clock_IBUF_BUFG | FEU/mbr                             | CU/system_reset            |               13 |             32 |         2.46 |
+|  clock_IBUF_BUFG | FEU/E[0]                            | CU/system_reset            |               12 |             32 |         2.67 |
++------------------+-------------------------------------+----------------------------+------------------+----------------+--------------+
 
 
