@@ -88,6 +88,8 @@ module fetchExecuteUnit(
     reg [8:0]  mar;
     reg [31:0] mbr;
     reg [2:0]  op_latch;   // Latched operation code
+    reg [15:0] scan_target_reg;  // Latched scan target NID
+    reg [8:0]  scan_end_reg;     // Latched scan end address
 
     assign debug_pc  = pc;
     assign debug_mar = mar;
@@ -99,7 +101,7 @@ module fetchExecuteUnit(
     wire scan_match_wire;
     comparator scan_cmp(
         .input_a(mbr[15:0]),
-        .input_b(fe_scan_target),
+        .input_b(scan_target_reg),
         .match(scan_match_wire)
     );
 
@@ -176,13 +178,15 @@ module fetchExecuteUnit(
     // =========================================================
     always @(posedge clk) begin
         if (reset) begin
-            state        <= S_IDLE;
-            pc           <= 9'd0;
-            mar          <= 9'd0;
-            mbr          <= 32'd0;
-            op_latch     <= 3'd0;
-            fe_match     <= 1'b0;
-            fe_match_addr <= 9'd0;
+            state           <= S_IDLE;
+            pc              <= 9'd0;
+            mar             <= 9'd0;
+            mbr             <= 32'd0;
+            op_latch        <= 3'd0;
+            fe_match        <= 1'b0;
+            fe_match_addr   <= 9'd0;
+            scan_target_reg <= 16'd0;
+            scan_end_reg    <= 9'd0;
         end
         else begin
             case (state)
@@ -204,8 +208,10 @@ module fetchExecuteUnit(
                                 state <= S_FETCH1;
                             end
                             FE_OP_SCAN: begin
-                                pc    <= fe_addr;
-                                state <= S_SCAN_ADDR;
+                                pc              <= fe_addr;
+                                scan_target_reg <= fe_scan_target;
+                                scan_end_reg    <= fe_scan_end;
+                                state           <= S_SCAN_ADDR;
                             end
                             FE_OP_INC: begin
                                 // No memory needed — go straight to execute
@@ -284,7 +290,7 @@ module fetchExecuteUnit(
                         fe_match <= 1'b0;
                         state    <= S_DONE;
                     end
-                    else if (pc > fe_scan_end + 1) begin
+                    else if (pc > scan_end_reg + 1) begin
                         // Reached end of scan range, no match
                         fe_match <= 1'b0;
                         state    <= S_DONE;

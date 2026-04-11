@@ -28,11 +28,18 @@ module votingTimer #(
                             (ELECTION_MINS[3:0] - mins_elapsed) : 4'd0;
 
     always @(posedge clk) begin
-        if (reset || timer_reset) begin
+        if (reset) begin
             active       <= 1'b0;
             sec_counter  <= 27'd0;
             sec_in_min   <= 6'd0;
             mins_elapsed <= 4'd0;
+        end
+        else if (timer_reset) begin
+            // Reset counters; if timer_start is also asserted, start immediately
+            sec_counter  <= 27'd0;
+            sec_in_min   <= 6'd0;
+            mins_elapsed <= 4'd0;
+            active       <= timer_start ? 1'b1 : 1'b0;
         end
         else if (timer_start && !active) begin
             // Start the election

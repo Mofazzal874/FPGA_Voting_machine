@@ -3,8 +3,8 @@
 # SW Build 3865809 on Sun May  7 15:05:29 MDT 2023
 # IP Build 3864474 on Sun May  7 20:36:21 MDT 2023
 # SharedData Build 3865790 on Sun May 07 13:33:03 MDT 2023
-# Start of session at: Fri Apr 10 14:56:26 2026
-# Process ID: 25428
+# Start of session at: Sun Apr 12 01:47:31 2026
+# Process ID: 21300
 # Current directory: D:/Academics/DSD/FPGA_Voting_machine/FPGA_Voting_machine.runs/synth_1
 # Command line: vivado.exe -log votingMachine.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source votingMachine.tcl
 # Log file: D:/Academics/DSD/FPGA_Voting_machine/FPGA_Voting_machine.runs/synth_1/votingMachine.vds

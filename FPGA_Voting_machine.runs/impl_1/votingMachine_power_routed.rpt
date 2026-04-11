@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2023.1 (win64) Build 3865809 Sun May  7 15:05:29 MDT 2023
-| Date             : Fri Apr 10 15:00:24 2026
+| Date             : Sun Apr 12 01:53:27 2026
 | Host             : Mofazzal874 running 64-bit major release  (build 9200)
 | Command          : report_power -file votingMachine_power_routed.rpt -pb votingMachine_power_summary_routed.pb -rpx votingMachine_power_routed.rpx
 | Design           : votingMachine
@@ -33,7 +33,7 @@ Table of Contents
 | Total On-Chip Power (W)  | 0.095        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.024        |
+| Dynamic (W)              | 0.023        |
 | Device Static (W)        | 0.072        |
 | Effective TJA (C/W)      | 5.0          |
 | Max Ambient (C)          | 84.5         |
@@ -52,16 +52,16 @@ Table of Contents
 +----------------+-----------+----------+-----------+-----------------+
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
-| Clocks         |     0.002 |        3 |       --- |             --- |
-| Slice Logic    |    <0.001 |     1023 |       --- |             --- |
-|   LUT as Logic |    <0.001 |      470 |     20800 |            2.26 |
+| Clocks         |     0.003 |        3 |       --- |             --- |
+| Slice Logic    |    <0.001 |     1039 |       --- |             --- |
+|   LUT as Logic |    <0.001 |      472 |     20800 |            2.27 |
 |   CARRY4       |    <0.001 |       68 |      8150 |            0.83 |
-|   Register     |    <0.001 |      387 |     41600 |            0.93 |
+|   Register     |    <0.001 |      404 |     41600 |            0.97 |
 |   F7/F8 Muxes  |    <0.001 |        1 |     32600 |           <0.01 |
 |   Others       |     0.000 |       25 |       --- |             --- |
-| Signals        |     0.001 |      926 |       --- |             --- |
+| Signals        |     0.001 |      924 |       --- |             --- |
 | Block RAM      |     0.001 |      0.5 |        50 |            1.00 |
-| I/O            |     0.018 |       50 |       106 |           47.17 |
+| I/O            |     0.017 |       50 |       106 |           47.17 |
 | Static Power   |     0.072 |          |           |                 |
 | Total          |     0.095 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
@@ -142,7 +142,7 @@ Table of Contents
 +---------------+-----------+
 | Name          | Power (W) |
 +---------------+-----------+
-| votingMachine |     0.024 |
+| votingMachine |     0.023 |
 |   CU          |     0.001 |
 |   MEM         |     0.001 |
 +---------------+-----------+
